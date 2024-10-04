@@ -1,9 +1,9 @@
 def get_most_common_letter(text):
     counter = {}
     special_chars = [" ", ",", "!"]
-    if char not in special_chars:
-        for char in text:
-        counter[char] = counter.get(char, 0) + 1
+    for char in text:
+        if char not in special_chars:
+            counter[char] = counter.get(char, 0) + 1
     letter = sorted(counter.items(), key=lambda item: item[1])[-1][0]
     print(counter)
     return letter

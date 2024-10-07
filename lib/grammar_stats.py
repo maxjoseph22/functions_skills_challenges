@@ -5,7 +5,6 @@ class GrammarStats:
         self.tests_failed = 0
 
     def check(self, text):
-        print("hey!")
         capitals_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
         punctuation_list = [".", "?", "!"]
         first_letter = text[0]

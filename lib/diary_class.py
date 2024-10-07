@@ -32,7 +32,11 @@ class DiaryEntry:
         words_to_read = wpm * minutes
         passage = " ".join((self.contents.split()[self.words_read_count:words_to_read + self.words_read_count]))
         self.words_read_count += words_to_read
+        if self.words_read_count >= len(self.contents.split()):
+            self.words_read_count = 0
         return passage
+    
+    
 
 
         # split_contents = self.contents.split()

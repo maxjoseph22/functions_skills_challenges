@@ -28,6 +28,29 @@ def test_reading_chunk():
     result_2 = diary_entry.reading_chunk(2,3)
     assert result_2 == "was great! We learned a lot"
 
+def test_reading_chunk_2():
+    diary_entry = DiaryEntry("Monday", "I went to class today, it was great! We learned a lot about coding and other interesting things. Shola and I played Jenga and I won.")
+    result = diary_entry.reading_chunk(2,7)
+    assert result == "I went to class today, it was great! We learned a lot about coding"
+    result_2 = diary_entry.reading_chunk(2,7)
+    assert result_2 == "and other interesting things. Shola and I played Jenga and I won."
+    result_3 = diary_entry.reading_chunk(2,3)
+    assert result_3 == "I went to class today, it"
+
+def test_reading_chunk_3():
+    diary_entry = DiaryEntry("Monday", "I went to class today, it was great! We learned a lot about coding and other interesting things. Shola and I played Jenga and I won.")
+    result = diary_entry.reading_chunk(2,7)
+    assert result == "I went to class today, it was great! We learned a lot about coding"
+    result_2 = diary_entry.reading_chunk(2,7)
+    assert result_2 == "and other interesting things. Shola and I played Jenga and I won."
+    result_3 = diary_entry.reading_chunk(2,3)
+    assert result_3 == "I went to class today, it"
+    result_4 = diary_entry.reading_chunk(2,10)
+    assert result_4 == "was great! We learned a lot about coding and other interesting things. Shola and I played Jenga and I won."
+    result_5 = diary_entry.reading_chunk(2,5)
+    assert result_5 == "I went to class today, it was great! We learned"
+    
+
 
 
 # def test_reading_chunk_second_call():
